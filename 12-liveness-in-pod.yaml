@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: simple-webapp
+    lables:
+      name: simple-webapp
+
+spec:
+   containers:
+   - name: simple-webapp
+     image: nginx
+     ports:
+       - containerPort: 8080
+     ## To check port readiness,if webserver is ready  
+     livenessProbe:
+        httpGet:
+          path: /api/ready
+          port: 8080
+        # Below are some extra options  we can pass to verify the status
+        initialDelaySeconds: 10
+        periodSeconds: 5
+        failureThreshold: 8
+     
+     ## To check TCP socket in case of DB server
+     livenessProbe:
+        tcpSocket:
+          port: 33306
+    
+     ## To check by executing app testing script
+     livenessProbe:     
+       exec :
+         command: 
+           - cat
+           - /app/is_ready
