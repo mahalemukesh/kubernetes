@@ -16,7 +16,7 @@ spec:
         httpGet:
           path: /api/ready
           port: 8080
-        # Below are some extra options  we can pass to verify the status
+        # Below are some extra options  we can pass to verify the status (same can be used with below liveness options as well)
         initialDelaySeconds: 10
         periodSeconds: 5
         failureThreshold: 8
