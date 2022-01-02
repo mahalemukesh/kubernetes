@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: back-end
+
+spec:
+   type: ClusterIP  #If not specified by default service will be clusterIP
+   ports:
+   - targetport: 80   #Running port inside the container
+     port: 80         #Service port to connect to targetPort
+   selector:
+     app: myapp
+     tier: back-end
