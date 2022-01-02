@@ -10,7 +10,7 @@ spec:
      port: 80         #Service port to connect to targetPort
      nodePort: 31001  #Random port running on kubernetes Host/node
    selector:
-     name: myapp
+     app: myapp
      tier: front-end
     
     
