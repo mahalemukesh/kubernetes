@@ -4,5 +4,5 @@ metadata:
     name: app-config
 data:
    APP_COLOR: blue
-   APP_MODE: 
+   APP_MODE: dev
    
