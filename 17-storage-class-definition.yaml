@@ -4,4 +4,8 @@ metadata:
    name: google-storage
 
 provisioner: kubernetes.io/gce-pd
+
+parameters:
+  type: pd-standard  # Or you can use pd-ssd type for ssd devices
+  replication-type: none # Or you can use regional-pd for replication 
    
