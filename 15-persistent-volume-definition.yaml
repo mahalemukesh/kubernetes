@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+   name: pv-vol1
+spec:
+   accessMode: 
+       - ReadWriteOnce  # We can use ReadWriteMany or ReadOnlyMany as per requirement
+   capacity:
+       storage: 1Gi
+   ## For localHost/Node    
+   hostpath:
+      path: /tmp/data
+   
+   ## For AWS
+   awsElastickBlockStore:
+     volumeID: <volume-id>
+     fsType: ext4
+   
