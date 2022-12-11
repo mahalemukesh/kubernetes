@@ -5,7 +5,7 @@ metadata:
   labels:
     name: nginx
     tier: front-end
-Spec:
+spec:
   containers:
   - name: nginx
     image: nginx
